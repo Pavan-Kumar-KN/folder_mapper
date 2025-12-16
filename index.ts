@@ -5,7 +5,17 @@ import type { TypeElement } from 'typescript';
 
 let files = [];
 
-interface TreeNode {
+/**
+ In javascript this is an Object
+ 
+ TreeNode{
+  key : {
+    key: value
+  }
+ }
+ 
+*/
+interface TreeNode { 
   [key: string]: TreeNode | null;
 }
 
@@ -25,7 +35,7 @@ const folderMapper = (dirpath: string): unknown[] => {
   })
 };
 
-folderMapper("./")
+folderMapper("D:\\test\\calendar") // D:\test\calendar
 
 
 // const tempFiles = [
@@ -48,12 +58,13 @@ function buildTree(paths: string[]): TreeNode {
   const tree: TreeNode = {};
   
   paths.forEach(strpath => {
-    const parts = strpath.split('\\');
-    let currentLevel = tree;
+    const parts = strpath.split('\\'); // returns ['string 1' , 'string 2' , 'string 3']
+    let currentLevel = tree; // {}
     
-    parts.forEach((part , index) =>{
-      if(index === parts.length - 1){
-        if(!currentLevel[part]){
+    parts.forEach((part , index) =>{ // ['string 1' , 'string 2' , 'string 3'] traversing this array 
+      // checking if we reached the last part of the path
+      if(index === parts.length - 1){ 
+        if(!currentLevel[part]){ // return value of the corrosponding key
           currentLevel[part] = null;
         }
       } else {
@@ -65,9 +76,10 @@ function buildTree(paths: string[]): TreeNode {
       
     })
   })
-  
+
   return tree;
 }
+
 function printTreeWithLines(tree: TreeNode, prefix: string = "", isLast: boolean = true) {
   const entries = Object.entries(tree).sort(([a], [b]) => {
     const aIsDir = tree[a] !== null;
@@ -82,6 +94,11 @@ function printTreeWithLines(tree: TreeNode, prefix: string = "", isLast: boolean
     const connector = isLastEntry ? "└── " : "├── ";
     
     console.log(prefix + connector + name);
+    
+    // write the structure to the structure md file
+    const mdFilePath = 'structure.md';
+    const mdFileContent = `${prefix}${connector}${name}\n`;
+    fs.appendFileSync(mdFilePath, mdFileContent);
     
     if (children !== null) {
       const newPrefix = prefix + (isLastEntry ? "    " : "│   ");
