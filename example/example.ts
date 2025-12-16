@@ -1,7 +1,7 @@
 import fs from 'fs';
-import { folderMapper, getFiles } from './core/scanner';
-import { buildTree } from './core/tree';
-import { printTreeWithLines } from './core/printer';
+import { folderMapper, getFiles } from '../core/scanner';
+import { buildTree } from '../core/tree';
+import { printTreeWithLines } from '../core/printer';
 
 let files : string[] = [];
 

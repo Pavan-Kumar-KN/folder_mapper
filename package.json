@@ -1,12 +1,20 @@
 {
   "name": "folder_mapper",
+  "description": "Generate beautiful directory tree structures for documentation",
+  "bin": {
+    "folder_mapper": "./dist/index.js"
+  },
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "dependencies": {
+    
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5"
-  }
+  },
+  "keywords": ["cli", "cli-tool","tree", "documentation", "folder-structure"]
 }
