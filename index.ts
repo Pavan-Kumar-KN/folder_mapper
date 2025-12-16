@@ -1,4 +1,3 @@
-import fs from 'fs';
 import { folderMapper, getFiles } from './core/scanner';
 import { buildTree } from './core/tree';
 import { printTreeWithLines } from './core/printer';
@@ -27,6 +26,6 @@ files = getFiles();
 // ]
 
 const tree = buildTree(files);
-printTreeWithLines(tree);
+printTreeWithLines(tree, "" , true, 'D:\\');
 
 

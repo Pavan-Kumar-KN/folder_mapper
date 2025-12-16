@@ -1,6 +1,16 @@
 import fs from 'fs';
+import path from 'path';
 
-function printTreeWithLines(tree: TreeNode, prefix: string = "", isLast: boolean = true) {
+function printTreeWithLines(tree: TreeNode, prefix: string = "", isLast: boolean = true, outputPathmdFile?: string) {
+  // If outputPath is provided and it's the first call, clear the file
+  if (outputPathmdFile && prefix === "") {
+    const fullPath = path.join(outputPathmdFile, 'structure.md');
+    // Clear the file at the start
+    if (fs.existsSync(fullPath)) {
+      fs.unlinkSync(fullPath);
+    }
+  }
+  
   const entries = Object.entries(tree).sort(([a], [b]) => {
     const aIsDir = tree[a] !== null;
     const bIsDir = tree[b] !== null;
@@ -12,21 +22,24 @@ function printTreeWithLines(tree: TreeNode, prefix: string = "", isLast: boolean
   entries.forEach(([name, children], index) => {
     const isLastEntry = index === entries.length - 1;
     const connector = isLastEntry ? "└── " : "├── ";
-    
+     const line = prefix + connector + name;
+     
     console.log(prefix + connector + name);
     
-    // write the structure to the structure md file
-    const mdFilePath = 'structure.md';
-    const mdFileContent = `${prefix}${connector}${name}\n`;
-    fs.appendFileSync(mdFilePath, mdFileContent);
+    // Only write to file if outputPath is provided
+        if (outputPathmdFile) {
+          const fullPath = path.join(outputPathmdFile, 'structure.md');
+          const mdFileContent = `${line}\n`;
+          fs.appendFileSync(fullPath, mdFileContent);
+        }
     
     if (children !== null) {
       const newPrefix = prefix + (isLastEntry ? "    " : "│   ");
-      printTreeWithLines(children, newPrefix, isLastEntry);
+      printTreeWithLines(children, newPrefix, isLastEntry , outputPathmdFile);
     }
   });
 }
 
 export {
   printTreeWithLines
-} ;
+};
