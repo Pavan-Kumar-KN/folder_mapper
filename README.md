@@ -1,7 +1,5 @@
 # folder_mapper
 
-
-
 To install dependencies:
 
 ```bash
@@ -33,3 +31,6 @@ Output:
 ├── index.ts
 └── temp.ts
 ```
+
+### Notice
+Still in the development phase. Please report any issues or suggestions.
