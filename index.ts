@@ -1,9 +1,7 @@
-import { file } from 'bun';
 import fs from 'fs';
 import path from 'path';
-import type { TypeElement } from 'typescript';
 
-let files = [];
+let files : string[] = [];
 
 /**
  In javascript this is an Object
@@ -19,7 +17,7 @@ interface TreeNode {
   [key: string]: TreeNode | null;
 }
 
-const folderMapper = (dirpath: string): unknown[] => {
+const folderMapper = (dirpath: string): void => {
   // first get the files in from the first level directory 
   const dirfiles = fs.readdirSync(dirpath);
   // const types = type(files, dirpath);
