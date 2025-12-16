@@ -5,7 +5,8 @@ import { printTreeWithLines } from './core/printer';
 
 let files : string[] = [];
 
-folderMapper("D:\\Projects\\micro-frontend\\book-call") // folder path 
+// folderMapper("D:\\Projects\\micro-frontend\\book-call") // folder path 
+folderMapper("D:\\open source projects\\Baileys")
 files = getFiles();
 
 
