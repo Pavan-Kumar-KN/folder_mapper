@@ -1,4 +1,4 @@
-import { printStats } from "../../utils/helper";
+import { parsePathString, printStats } from "../../utils/helper";
 import { parseGitignore } from "../../utils/ignore";
 import { printTreeWithLines } from "../core/printer";
 import { folderMapper, getFiles } from "../core/scanner";
@@ -26,7 +26,11 @@ export function read_git_ignore(content : string): string[] {
  */
 export function scan_dir_build_tree(source_path: string, output_path: string , ignore : string): void {
   const spinner = ora("Loading the project").start();
+  let parsedPath = parsePathString(source_path);
+  let parsedOutputPath = parsePathString(output_path);
+  
   let ignore_options_array : string[] = [];
+  
   if(ignore){
     ignore_options_array = ignore.split(',');
   }
@@ -35,7 +39,7 @@ export function scan_dir_build_tree(source_path: string, output_path: string , i
     const startTime = Date.now();
     let files : string[] = [];
       
-    folderMapper(source_path , ignore_options_array);
+    folderMapper(parsedPath , ignore_options_array);
     
     files = getFiles();
     
@@ -43,7 +47,7 @@ export function scan_dir_build_tree(source_path: string, output_path: string , i
     const tree = buildTree(files);
     
     spinner.text = "Writing the structure to file... "
-    printTreeWithLines(tree, "" , true, output_path);
+    printTreeWithLines(tree, "" , true, parsedOutputPath);
     
     const endTime = Date.now();
     const duration = endTime - startTime;
@@ -52,7 +56,7 @@ export function scan_dir_build_tree(source_path: string, output_path: string , i
     // print the log stats
     printStats({
       scanned_files: files.length,
-      output_path , 
+      output_path : parsedOutputPath, 
       time_taken: duration
     }, files )
     

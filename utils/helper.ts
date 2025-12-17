@@ -108,9 +108,22 @@ function countDirectories(files: string[]): number {
   return directories.size;
 }
 
+/**
+ * Normalizes path separators to the OS-specific separator
+ * Windows: backslash (\)
+ * Linux/Mac: forward slash (/)
+ * @param pathString - The path string to normalize
+ * @returns Normalized path string
+ */
+function parsePathString(pathString: string): string {
+  // Normalize the path using Node.js path module
+  // This automatically uses the correct separator for the OS
+  return path.normalize(pathString);
+}
 
 export {
   checkFileExists,
   printStats,
-  printHelp
+  printHelp,
+  parsePathString
 };

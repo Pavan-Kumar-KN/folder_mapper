@@ -177,13 +177,13 @@ describe("buildTree – exhaustive test suite", () => {
     ];
 
     expect(buildTree(paths)).toEqual({
-      bin: {
-        start: null,
-        stop: null
-      },
-      scripts: {
-        deploy: null
-      }
+        bin: {
+          start: null,
+          stop: null
+        },
+        scripts: {
+          deploy: null
+        }
     });
   });
 

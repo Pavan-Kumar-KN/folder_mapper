@@ -26,19 +26,15 @@ files = getFiles();
 //   "temp.ts", 
 // ]
 
-// const tree = buildTree(files);
-// printTreeWithLines(tree, "" , true, './');
+const tree = buildTree(files);
+printTreeWithLines(tree, "" , true, './');
 
 
-const paths = [
-     "src\\core\\scanner.ts",
-     "src\\core\\tree.ts",
-     "src\\core\\printer.ts",
-     "src\\handlers\\handler.ts",
-     "tests\\tree.test.ts",
-     "package.json"
-   ];
+// const paths = [
+//   "\\src\\index.ts",
+//   "/src/utils/helper.ts"
+// ];
 
-   const result = buildTree(paths);
+//   const result = buildTree(paths);
    
-console.log(result);
+// console.log(result);

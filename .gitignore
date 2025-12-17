@@ -35,3 +35,7 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # structure file
 structure.md
+
+tests/fixtures
+
+example/devtest.ts
