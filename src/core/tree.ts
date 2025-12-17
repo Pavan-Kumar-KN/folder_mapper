@@ -1,3 +1,4 @@
+import { start } from "repl";
 import { parsePathString } from "../../utils/helper";
 import path from 'path';
 
@@ -5,13 +6,14 @@ function buildTree(paths: string[]): TreeNode {
   const tree: TreeNode = {};
   
   paths.forEach(strpath => {
-    let parsePath = parsePathString(strpath);
+    // let parsePath = parsePathString(strpath);
     
-    if(!parsePath){
-      return;
-    }
+    // if(!parsePath){
+    //   return;
+    // }
     
-    const parts = parsePath.split(path.sep); // returns ['string 1' , 'string 2' , 'string 3']
+    // currently only supported for windows paths
+    const parts = strpath.split("\\"); // returns ['string 1' , 'string 2' , 'string 3']
     let currentLevel = tree; // {}
     
     parts.forEach((part , index) =>{ // ['string 1' , 'string 2' , 'string 3'] traversing this array 
