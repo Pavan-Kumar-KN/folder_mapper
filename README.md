@@ -6,10 +6,10 @@ To install dependencies:
 bun install
 ```
 
-To run:
+## Usage 
 
-```bash
-bun run index.ts
+```
+folder_mapper <source_path> <output_structure>
 ```
 
 Output: 

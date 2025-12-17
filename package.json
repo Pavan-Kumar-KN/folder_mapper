@@ -9,6 +9,7 @@
   "private": true,
   "dependencies": {
     "@types/yargs": "^17.0.35",
+    "ora": "^9.0.0",
     "yargs": "^18.0.0"
   },
   "devDependencies": {

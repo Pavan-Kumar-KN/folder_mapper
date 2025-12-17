@@ -11,3 +11,9 @@
 interface TreeNode { 
   [key: string]: TreeNode | null;
 }
+
+interface Stats {
+  scanned_files : number;
+  output_path : string;
+  time_taken : number;
+}

@@ -26,43 +26,43 @@ This would be **super useful** as a CLI tool that you (and others) can use acros
 
 ### **Phase 1: Core CLI Features (Priority)**
 ```/dev/null/features.txt#L1-10
-1. ✅ Command-line arguments
+1. Command-line arguments ✅
    - Custom path: `folder-mapper ./my-project`
    - Output file: `folder-mapper -o docs/structure.md`
    
-2. ✅ Ignore patterns (.gitignore support)
-   - Read .gitignore file
-   - Custom ignore: `folder-mapper --ignore node_modules,dist,.git`
+2. Ignore patterns (.gitignore support)  ✅
+   - Read .gitignore file 
+   - Custom ignore: `folder-mapper --ignore node_modules,dist,.git` 
    
-3. ✅ Max depth control
+3. Max depth control
    - `folder-mapper --depth 3`
 ```
 
 ### **Phase 2: Advanced Features**
 ```/dev/null/features.txt#L1-12
-4. ✅ Multiple output formats
+4. Multiple output formats
    - Markdown (current)
    - JSON (for programmatic use)
    - Plain text
    - HTML
    
-5. ✅ File stats
+5. File stats
    - Show file sizes
    - Show file counts per directory
    
-6. ✅ Filtering
+6. Filtering
    - Only certain file types: `--include "*.ts,*.js"`
    - Exclude patterns: `--exclude "*.test.ts"`
 ```
 
 ### **Phase 3: Documentation Features**
 ```/dev/null/features.txt#L1-8
-7. ✅ Copy to clipboard option
-8. ✅ Interactive mode (choose folders to include/exclude)
-9. ✅ Templates (different styles for different purposes)
-10. ✅ Git integration (only show tracked files)
-11. ✅ Add file descriptions/comments from code
-12. ✅ Generate README sections automatically
+7.Copy to clipboard option
+8.Interactive mode (choose folders to include/exclude)
+9.Templates (different styles for different purposes)
+10.Git integration (only show tracked files)
+11.Add file descriptions/comments from code
+12.Generate README sections automatically
 ```
 
 ## Implementation Plan:

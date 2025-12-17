@@ -28,7 +28,7 @@ async function printTreeWithLines(tree: TreeNode, prefix: string = "", isLast: b
     const connector = isLastEntry ? "└── " : "├── ";
      const line = prefix + connector + name;
      
-    console.log(prefix + connector + name);
+    // console.log(prefix + connector + name);
     
     // Only write to file if outputPath is provided
         if (outputPathmdFile) {
