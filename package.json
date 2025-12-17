@@ -6,11 +6,13 @@
   },
   "type": "module",
   "scripts": {
-     "build": "tsc",
-     "prepublishOnly": "bun run build || npm run build",
-     "dev": "bun run index.ts",
-     "clean": "rm -rf dist"
-   },
+    "build": "tsc",
+    "prepublishOnly": "bun run build || npm run build",
+    "dev": "bun run index.ts",
+    "clean": "rm -rf dist",
+    "test": "bun test",
+    "test:watch": "bun test --watch"
+  },
   "private": true,
   "dependencies": {
     "@types/yargs": "^17.0.35",
@@ -24,14 +26,14 @@
     "typescript": "^5"
   },
   "keywords": [
-     "cli", 
-     "cli-tool", 
-     "tree", 
-     "documentation", 
-     "folder-structure",
-     "directory-tree",
-     "file-tree"
-   ],
+    "cli",
+    "cli-tool",
+    "tree",
+    "documentation",
+    "folder-structure",
+    "directory-tree",
+    "file-tree"
+  ],
   "author": "Pavan Kumar KN",
   "license": "MIT"
 }
