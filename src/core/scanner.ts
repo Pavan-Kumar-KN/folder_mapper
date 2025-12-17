@@ -13,7 +13,9 @@ const folderMapper = (dirpath: string , ignore_option_files?: string[]): void =>
   let ignore_files: string[] = read_git_ignore(fs.readFileSync('.gitignore', 'utf8'));
   
   // custom files from the terminal "--ignore="node_modules , doc"
-  ignore_files = ignore_option_files?.length > 0 ? ignore_files.concat(ignore_option_files) : ignore_files;
+  if(ignore_option_files && ignore_option_files?.length > 0){
+    ignore_files =  ignore_files.concat(ignore_option_files);
+  }
   
   // filter out the ignored files
   const filtered_files = dirfiles.filter(file => !ignore_files.includes(file));

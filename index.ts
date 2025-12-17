@@ -1,1 +1,2 @@
-import './src/cmd/command.ts';
+#!/usr/bin/env node
+import './src/cmd/command';

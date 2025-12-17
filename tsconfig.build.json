@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    // Output settings
+    "outDir": "./dist",
+    "rootDir": ".",
+    
+    // Module system
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "lib": ["ES2022"],
+    
+    // Generate files
+    "noEmit": false,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    
+    // Compatibility
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    
+    // Strictness
+    "strict": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "index.ts",
+    "types.d.ts",
+    "src/**/*",
+    "utils/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tests"
+  ]
+}

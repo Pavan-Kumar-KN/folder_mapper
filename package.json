@@ -2,10 +2,19 @@
   "name": "folder_mapper",
   "description": "Generate beautiful directory tree structures for documentation",
   "bin": {
-    "folder_mapper": "./index.ts"
+    "folder_mapper": "./dist/index.js"
   },
-  "module": "index.ts",
+  "module": "./dist/index.js",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+     "build": "tsc --project tsconfig.build.json",
+     "prepublishOnly": "bun run build || npm run build",
+     "dev": "bun run index.ts",
+     "clean": "rm -rf dist"
+   },
   "private": true,
   "dependencies": {
     "@types/yargs": "^17.0.35",
@@ -18,7 +27,15 @@
   "peerDependencies": {
     "typescript": "^5"
   },
-  "keywords": ["cli", "cli-tool", "tree", "documentation", "folder-structure"],
+  "keywords": [
+     "cli", 
+     "cli-tool", 
+     "tree", 
+     "documentation", 
+     "folder-structure",
+     "directory-tree",
+     "file-tree"
+   ],
   "author": "Pavan Kumar KN",
   "license": "MIT"
 }

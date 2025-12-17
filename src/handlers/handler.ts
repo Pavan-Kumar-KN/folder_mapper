@@ -1,4 +1,3 @@
-import { file } from "bun";
 import { printStats } from "../../utils/helper";
 import { parseGitignore } from "../../utils/ignore";
 import { printTreeWithLines } from "../core/printer";
@@ -52,7 +51,7 @@ export function scan_dir_build_tree(source_path: string, output_path: string , i
     
     // print the log stats
     printStats({
-      scanned_files: file.length ,
+      scanned_files: files.length ,
       output_path , 
       time_taken: duration
     }, files )
