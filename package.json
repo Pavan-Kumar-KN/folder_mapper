@@ -2,15 +2,11 @@
   "name": "folder_mapper",
   "description": "Generate beautiful directory tree structures for documentation",
   "bin": {
-    "folder_mapper": "./dist/index.js"
+    "folder_mapper": "./index.ts"
   },
-  "module": "./dist/index.js",
   "type": "module",
-  "files": [
-    "dist"
-  ],
   "scripts": {
-     "build": "tsc --project tsconfig.build.json",
+     "build": "tsc",
      "prepublishOnly": "bun run build || npm run build",
      "dev": "bun run index.ts",
      "clean": "rm -rf dist"
