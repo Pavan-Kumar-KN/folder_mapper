@@ -1,0 +1,8 @@
+[test]
+# Only look for tests in specific directories
+root = "./tests"
+
+# Override test file patterns (optional)
+# preload = ["./tests/setup.test.ts"]
+
+# Coverage settings
