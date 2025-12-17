@@ -20,7 +20,7 @@ function checkFileExists(file : string) {
 function printStats(stats : Stats , files: string[]) {
      console.log('\n📊 Stats:');
      console.log(`├─ Total files: ${files.length}`);
-     console.log(`├─ Total directories: ${countDirectories(files)}`);
+     console.log(`├─ Total directories: ${countDirectories(files)-1}`);
      console.log(`├─ Output path: ${path.join(stats.output_path, 'structure.md')}`);
      console.log(`└─ Time taken: ${stats.time_taken}s`);
 }

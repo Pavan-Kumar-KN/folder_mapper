@@ -3,7 +3,6 @@ import { hideBin } from 'yargs/helpers';
 import { scan_dir_build_tree } from "../handlers/handler";
 import { printHelp } from "../../utils/helper";
 
-
 yargs(hideBin(process.argv))
   .command(
     "run <path> <output_path>",
