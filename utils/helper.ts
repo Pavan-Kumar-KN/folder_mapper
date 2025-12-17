@@ -46,6 +46,7 @@ function countDirectories(files: string[]): number {
   return directories.size;
 }
 
+
 export {
   checkFileExists,
   printStats

@@ -27,29 +27,31 @@ This would be **super useful** as a CLI tool that you (and others) can use acros
 ### **Phase 1: Core CLI Features (Priority)**
 ```/dev/null/features.txt#L1-10
 1. Command-line arguments ✅
-   - Custom path: `folder-mapper ./my-project`
-   - Output file: `folder-mapper -o docs/structure.md`
+   - Custom path: `folder-mapper ./my-project` )  ✅
+   - Output file: `folder-mapper -o docs/structure.md` )  ✅
    
 2. Ignore patterns (.gitignore support)  ✅
-   - Read .gitignore file 
-   - Custom ignore: `folder-mapper --ignore node_modules,dist,.git` 
+   - Read .gitignore file  ✅
+   - Custom ignore: `folder-mapper --ignore "node_modules,dist,.git"`  ✅
+ 
+3. File stats )  ✅
+   - Show file sizes 
+   - Show file counts per directory )  ✅
    
-3. Max depth control
-   - `folder-mapper --depth 3`
 ```
 
 ### **Phase 2: Advanced Features**
 ```/dev/null/features.txt#L1-12
-4. Multiple output formats
+
+4. Max depth control
+   - `folder-mapper --depth 3`
+ 
+5. Multiple output formats
    - Markdown (current)
    - JSON (for programmatic use)
    - Plain text
    - HTML
-   
-5. File stats
-   - Show file sizes
-   - Show file counts per directory
-   
+     
 6. Filtering
    - Only certain file types: `--include "*.ts,*.js"`
    - Exclude patterns: `--exclude "*.test.ts"`

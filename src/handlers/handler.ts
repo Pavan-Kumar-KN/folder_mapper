@@ -25,14 +25,18 @@ export function read_git_ignore(content : string): string[] {
  * @param source_path 
  * @param output_path 
  */
-export function scan_dir_build_tree(source_path: string, output_path: string): void {
+export function scan_dir_build_tree(source_path: string, output_path: string , ignore : string): void {
   const spinner = ora("Loading the project").start();
-  
-  try {
+  let ignore_options_array : string[] = [];
+  if(ignore){
+    ignore_options_array = ignore.split(',');
+  }
+    
+    try {
     const startTime = Date.now();
     let files : string[] = [];
       
-    folderMapper(source_path);
+    folderMapper(source_path , ignore_options_array);
     
     files = getFiles();
     
@@ -46,6 +50,7 @@ export function scan_dir_build_tree(source_path: string, output_path: string): v
     const duration = endTime - startTime;
     spinner.succeed(`Structure built in ${duration}ms`);
     
+    // print the log stats
     printStats({
       scanned_files: file.length ,
       output_path , 

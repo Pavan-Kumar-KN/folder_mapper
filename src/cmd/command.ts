@@ -16,6 +16,8 @@ yargs(hideBin(process.argv))
             type: "string"
           })
       },
-        (argv) => scan_dir_build_tree(argv.path as string, argv.output_path as string)
+      (argv) =>{
+        scan_dir_build_tree(argv.path as string, argv.output_path as string , argv.ignore as string)
+      }
     )
     .parse(); 

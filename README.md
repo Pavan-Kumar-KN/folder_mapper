@@ -9,7 +9,11 @@ bun install
 ## Usage 
 
 ```
-folder_mapper <source_path> <output_structure>
+folder_mapper run <source_path> <output_structure>
+```
+
+```
+folder_mapper run <source_path> <output_structure> --ignore="<directory , files>"
 ```
 
 Output: 
