@@ -1,5 +1,6 @@
 import path from 'path';
 import fs from 'fs';
+import { read_git_ignore } from '../handlers/handler';
 
 let files: string[] = [];
 
@@ -8,7 +9,13 @@ const folderMapper = (dirpath: string): void => {
   const dirfiles = fs.readdirSync(dirpath);
   // const types = type(files, dirpath);
   
-  dirfiles.forEach((file) =>{
+  // here we have to parse the .gitignore file
+  const ignore_files: string[] = read_git_ignore(fs.readFileSync('.gitignore', 'utf8'));
+  
+  // filter out the ignored files
+  const filtered_files = dirfiles.filter(file => !ignore_files.includes(file));
+  
+  filtered_files.forEach((file) =>{
     const absolute = path.join(dirpath, file);
     
     if(fs.statSync(absolute).isDirectory()) {
@@ -28,3 +35,4 @@ export {
   folderMapper,
   getFiles
 };
+

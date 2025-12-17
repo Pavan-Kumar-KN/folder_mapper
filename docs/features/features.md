@@ -6,12 +6,12 @@
 - Pretty tree visualization with box-drawing characters
 - Markdown file output (`structure.md`)
 
-⚠️ **Issues to fix:**
-1. Hardcoded path in `folderMapper()`
-2. No `.gitignore` filtering (includes `node_modules`)
-3. File overwrites on each run (should clear `structure.md` first)
+⚠️ **Issues to fix:** (fixed)
+1. Hardcoded path in `folderMapper()` ✅
+2. No `.gitignore` filtering (includes `node_modules`) ✅
+3. File overwrites on each run (should clear `structure.md` first) ✅
 
-## My Recommendation: **Make it a CLI Tool!** 📦
+## **Make it a CLI Tool!** 
 
 This would be **super useful** as a CLI tool that you (and others) can use across any project. Here's why:
 

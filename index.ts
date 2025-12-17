@@ -1,11 +1,11 @@
-import { folderMapper, getFiles } from './core/scanner';
-import { buildTree } from './core/tree';
-import { printTreeWithLines } from './core/printer';
+import { folderMapper, getFiles } from './src/core/scanner';
+import { buildTree } from './src/core/tree';
+import { printTreeWithLines } from './src/core/printer';
 
 let files : string[] = [];
 
-// folderMapper("D:\\Projects\\micro-frontend\\book-call") // folder path 
-folderMapper("D:\\open source projects\\Baileys")
+folderMapper("D:\\Projects\\micro-frontend\\book-call") // folder path 
+// folderMapper("./")
 files = getFiles();
 
 
@@ -26,6 +26,6 @@ files = getFiles();
 // ]
 
 const tree = buildTree(files);
-printTreeWithLines(tree, "" , true, 'D:\\');
+printTreeWithLines(tree, "" , true, './');
 
 

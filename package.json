@@ -8,7 +8,8 @@
   "type": "module",
   "private": true,
   "dependencies": {
-    
+    "@types/yargs": "^17.0.35",
+    "yargs": "^18.0.0"
   },
   "devDependencies": {
     "@types/bun": "latest"
@@ -16,7 +17,7 @@
   "peerDependencies": {
     "typescript": "^5"
   },
-  "keywords": ["cli", "cli-tool","tree", "documentation", "folder-structure"],
+  "keywords": ["cli", "cli-tool", "tree", "documentation", "folder-structure"],
   "author": "Pavan Kumar KN",
   "license": "MIT"
 }

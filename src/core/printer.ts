@@ -1,14 +1,18 @@
 import fs from 'fs';
 import path from 'path';
+import { checkFileExists } from '../../utils/helper';
 
-function printTreeWithLines(tree: TreeNode, prefix: string = "", isLast: boolean = true, outputPathmdFile?: string) {
+async function printTreeWithLines(tree: TreeNode, prefix: string = "", isLast: boolean = true, outputPathmdFile?: string) {
   // If outputPath is provided and it's the first call, clear the file
   if (outputPathmdFile && prefix === "") {
-    const fullPath = path.join(outputPathmdFile, 'structure.md');
-    // Clear the file at the start
-    if (fs.existsSync(fullPath)) {
+     const fullPath = path.join(outputPathmdFile, 'structure.md');
+     console.log("The structure md path ", outputPathmdFile);
+     
+    const isExists = await checkFileExists(fullPath);
+    if (isExists) {
       fs.unlinkSync(fullPath);
     }
+    fs.writeFileSync(fullPath, '');
   }
   
   const entries = Object.entries(tree).sort(([a], [b]) => {
