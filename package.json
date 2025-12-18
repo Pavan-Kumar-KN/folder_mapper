@@ -1,29 +1,35 @@
 {
-  "name": "folder_mapper",
+  "name": "@pavan-kumar-kn/folder_mapper",
+  "version": "1.0.0",
   "description": "Generate beautiful directory tree structures for documentation",
+  "main": "./dist/index.js",
   "bin": {
-    "folder_mapper": "./index.ts"
+    "folder_mapper": "./dist/index.js"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "type": "module",
   "scripts": {
-    "build": "tsc",
-    "prepublishOnly": "bun run build || npm run build",
+    "build": "node scripts/build.js",
+    "prepublishOnly": "npm run clean && npm run build",
     "dev": "bun run index.ts",
+    "dev:watch": "bun --watch index.ts",
     "clean": "rm -rf dist",
     "test": "bun test",
-    "test:watch": "bun test --watch"
+    "test:watch": "bun test --watch",
+    "prepack": "npm run build"
   },
-  "private": true,
   "dependencies": {
-    "@types/yargs": "^17.0.35",
     "ora": "^9.0.0",
     "yargs": "^18.0.0"
   },
   "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
+    "@types/bun": "latest",
+    "@types/yargs": "^17.0.35",
+    "typescript": "^5.9.3"
   },
   "keywords": [
     "cli",
@@ -32,8 +38,18 @@
     "documentation",
     "folder-structure",
     "directory-tree",
-    "file-tree"
+    "file-tree",
+    "tree-generator",
+    "folder-tree",
+    "project-structure",
+    "markdown",
+    "readme",
+    "gitignore"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pavan-Kumar-KN/folder_mapper.git"
+  },
   "author": "Pavan Kumar KN",
   "license": "MIT"
 }

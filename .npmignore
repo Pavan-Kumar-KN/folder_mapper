@@ -1,0 +1,27 @@
+# Source files (we only publish dist/)
+src/
+utils/
+tests/
+example/
+docs/
+scripts/
+
+# TypeScript configs
+tsconfig.json
+tsconfig.build.json
+
+# Bun specific
+bunfig.toml
+bun.lock
+index.ts
+
+# Development files
+*.test.ts
+.gitignore
+structure.md
+coverage/
+
+# Keep these
+!dist/
+!README.md
+!LICENSE

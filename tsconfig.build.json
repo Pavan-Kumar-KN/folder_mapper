@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    // Output configuration for npm package
+    "outDir": "./dist",
+    "rootDir": "./",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    
+    // Target Node.js environment
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "lib": ["ESNext"],
+    
+    // Best practices
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [
+    "src/**/*",
+    "utils/**/*",
+    "index.ts",
+    "types.d.ts"
+  ],
+  "exclude": ["node_modules", "dist", "tests", "example"]
+}

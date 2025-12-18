@@ -5,7 +5,7 @@ import { buildTree } from "../src/core/tree";
 
 let files : string[] = [];
 
-folderMapper("D:\\Projects\\micro-frontend\\book-call") // folder path 
+folderMapper("D:\\Private Docs\\startup_projects\\@novagate") // folder path 
 // folderMapper("./")
 files = getFiles();
 
