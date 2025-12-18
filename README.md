@@ -1,29 +1,22 @@
 # folder_mapper
+<!--![npm](https://img.shields.io/npm/v/@pavan-kumar-kn/folder_mapper)
+![downloads](https://img.shields.io/npm/dw/@pavan-kumar-kn/folder_mapper)
+![license](https://img.shields.io/npm/l/@pavan-kumar-kn/folder_mapper)-->
+
 
 A CLI tool to generate beautiful directory tree structures for documentation. Automatically respects .gitignore patterns and supports custom ignore patterns.
 
-## Features
-
-- Recursive directory scanning
-- Automatic .gitignore support
-- Custom ignore patterns via CLI
-- Beautiful tree visualization with box-drawing characters
-- Markdown output
-- File and directory statistics
-- Fast performance with loading indicators
 
 ## Installation
-
-### Install dependencies:
+**Quick Start**
+```bash
+npx @pavan-kumar-kn/folder_mapper <source_dir> <output_dir>
+```
 
 ```bash
-bun install
+npm install -g @pavan-kumar-kn/folder_mapper
 ```
 
-**Global installation (optional):**bun link
-```
-bun link
-```
 
 Now you can use `folder_mapper` from anywhere in your terminal.
 
@@ -178,6 +171,14 @@ folder_mapper/
 bun run index.ts <path> <output_path>
 ```
 
+## 🚀 What's Next?
+
+**Phase 2 starts 1/1/26!** Check out our **[Complete Roadmap](./docs/features/roadmap.md)** for upcoming features:
+- GitHub Actions integration for auto-updating structure files
+- Multiple output formats (JSON, HTML, plain text)
+- VSCode extension & enhanced npm usage
+
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit issues or pull requests.
@@ -190,17 +191,11 @@ MIT
 Pavan Kumar KN
 
 ## Notice
-
+```
 This project is actively maintained. Please report any issues or suggestions through the GitHub issue tracker.
 ```
 
-This README includes:
-- Clear description and features
-- Installation instructions
-- Comprehensive usage examples
-- Output examples
-- How it works explanation
-- Use cases
-- Development guide
-- Roadmap
-- All Phase 1 features documented
+```
+⭐ If this tool saved you time documenting your project, please consider starring the repo.  
+It really helps keep the project alive.
+```

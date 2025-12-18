@@ -6,7 +6,6 @@ async function printTreeWithLines(tree: TreeNode, prefix: string = "", isLast: b
   // If outputPath is provided and it's the first call, clear the file
   if (outputPathmdFile && prefix === "") {
      const fullPath = path.join(outputPathmdFile, 'structure.md');
-     console.log("The structure md path ", outputPathmdFile);
      
     const isExists = await checkFileExists(fullPath);
     if (isExists) {
