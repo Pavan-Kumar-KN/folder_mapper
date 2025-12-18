@@ -153,23 +153,7 @@ Patterns are merged with .gitignore, so you don't need to repeat existing ignore
 
 ## Development
 
-### Project Structure
-```
-folder_mapper/
-├── src/
-│   ├── cmd/          # Command-line interface
-│   ├── core/         # Core scanning and tree logic
-│   └── handlers/     # Business logic handlers
-├── utils/            # Helper functions
-├── index.ts          # Entry point
-└── package.json
-```
-
-## Run locally
-
-```bash
-bun run index.ts <path> <output_path>
-```
+For development setup and docs please refer to the **[Dev Docs](./docs/devdoc.md)**.
 
 ## 🚀 What's Next?
 
