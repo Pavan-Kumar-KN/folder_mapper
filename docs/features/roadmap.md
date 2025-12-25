@@ -11,13 +11,17 @@ Generate directory tree structures
 
 
 ### Phase 2 (Planned) will start from 1/1/26
-- Custom Templates creation (full project creation)
-- supporting to github actions so based on the PR or any updates to project update the structure.md file
-- Multiple usage method (vscode extenstion , npm usage)
+- Building the structures with custom templates
+- supporting to github actions so based on the PR or any updates to project update the structure.md based structure.json snapshot instead retraversing file )  ✅
+- Multiple usage method (github actions npm usage)
+  -> npm usage is done )  ✅ (need to add the example file)
+  -> github action wise will be done today
 
+Note: VScode extenstion is shifted phase 3 
 
 ### Phase 3 (Yet to Plan)
-- Multiple Output formats
-- File type filtering (--include, --exclude)
+- Multiple Output formats (Added I think json strcuture enough)
+- vscode extenstion 
+- config file support 
 
- 
+
