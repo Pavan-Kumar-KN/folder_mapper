@@ -5,7 +5,9 @@
 │   ├── features
 │   │   ├── features.md
 │   │   └── roadmap.md
-│   └── devdoc.md
+│   ├── devdoc.md
+│   ├── structure.json
+│   └── structure.md
 ├── example
 │   └── example.ts
 ├── scripts
