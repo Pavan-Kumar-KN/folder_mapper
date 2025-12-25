@@ -13,7 +13,8 @@
   },
   ".github": {
     "workflows": {
-      "deploy.yml": null
+      "deploy.yml": null,
+      "publish.yml": null
     }
   },
   "example": {

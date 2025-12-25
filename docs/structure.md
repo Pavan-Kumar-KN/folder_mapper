@@ -1,6 +1,7 @@
 ├── .github
 │   └── workflows
-│       └── deploy.yml
+│       ├── deploy.yml
+│       └── publish.yml
 ├── docs
 │   ├── features
 │   │   ├── features.md
