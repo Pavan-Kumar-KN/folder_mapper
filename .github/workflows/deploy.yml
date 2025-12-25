@@ -78,61 +78,6 @@
 #           echo "Docs Structure is updated"
 #           echo "CI check passed."
 
-# name: Folder Mapper Auto Update
-
-# on:
-#   push:
-#     branches: [phase-2/develop]
-
-# permissions:
-#   contents: write
-
-# jobs:
-#   update-structure:
-#     runs-on: ubuntu-latest
-
-#     # Prevent infinite loop from bot commits
-#     if: "!contains(github.event.head_commit.message, '[skip ci]')"
-
-#     steps:
-#       - name: Checkout branch
-#         uses: actions/checkout@v4
-#         with:
-#           fetch-depth: 0
-
-#       - name: Install Bun
-#         uses: oven-sh/setup-bun@v1
-
-#       - name: Install dependencies
-#         run: bun install
-
-#       - name: Build the project
-#         run: bun run build
-
-#       - name: Link project
-#         run: bun link
-
-#       - name: Generate structure
-#         run: |
-#           echo "Generating structure for branch..."
-#           folder_mapper run . ./docs
-
-#       - name: Commit structure updates if changed
-#         run: |
-#           if git diff --quiet docs/structure.json docs/structure.md; then
-#             echo "✅ No structure changes detected"
-#             exit 0
-#           fi
-
-#           echo "📦 Structure changed — committing updates"
-
-#           git config user.name "github-actions[bot]"
-#           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-#           git add docs/structure.json docs/structure.md
-#           git commit -m "chore: auto-update structure docs [skip ci]"
-#           git push
-
 name: Folder Mapper Auto Update
 
 on:
