@@ -17,3 +17,9 @@ interface Stats {
   output_path : string;
   time_taken : number;
 }
+
+interface DiffResult {
+  added: string[];
+  removed: string[];
+  unchanged: string[];
+}

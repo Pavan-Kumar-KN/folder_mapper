@@ -1,0 +1,63 @@
+name: Folder Mapper CI
+
+on:
+  pull_request:
+    branches: [phase-2/develop]
+
+jobs:
+  verify-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Need full history for baseline comparison
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build the project
+        run: bun run build
+
+      - name: Link the project locally
+        run: bun link
+
+      - name: Fetch baseline structure from target branch
+        run: |
+          echo "Fetching baseline from ${{ github.base_ref }}..."
+          git fetch origin ${{ github.base_ref }}
+            
+          # Try to get old structure.json, create empty if doesn't exist
+          git show origin/${{ github.base_ref }}:docs/structure.json > /tmp/old-structure.json 2>/dev/null || echo "{}" > /tmp/old-structure.json
+            
+          if [ -s /tmp/old-structure.json ]; then
+            echo "✅ Baseline found"
+          else
+            echo "⚠️  No baseline - this is the first structure generation"
+          fi
+          
+      - name: Generate structure for PR
+        run: |
+          echo "Generating structure for PR..."
+          folder_mapper run . ./docs
+
+      - name: Check for structural changes
+        id: diff_check
+        run: |
+          if git diff --quiet docs/structure.json docs/structure.md; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "✅ No structural changes detected"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "⚠️  Structural changes detected"
+          fi
+
+      - name: Success message
+        if: steps.diff_check.outputs.has_changes == 'false'
+        run: |
+          echo "✨ Structure is up to date!"
+          echo "CI check passed."
