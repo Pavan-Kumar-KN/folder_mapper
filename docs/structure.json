@@ -1,0 +1,61 @@
+{
+  "docs": {
+    "features": {
+      "features.md": null,
+      "roadmap.md": null
+    },
+    "devdoc.md": null
+  },
+  "scripts": {
+    "build.js": null
+  },
+  ".gitignore": null,
+  "tsconfig.json": null,
+  "tests": {
+    "helper.test.ts": null,
+    "ignore.test.ts": null,
+    "scanner.test.ts": null,
+    "helpers": {
+      "renamefiles.ts": null,
+      "fixture.ts": null
+    },
+    "tree.test.ts": null,
+    "printer.test.ts": null
+  },
+  "example": {
+    "example.ts": null
+  },
+  "bunfig.toml": null,
+  "tsconfig.build.json": null,
+  "bun.lock": null,
+  "index.ts": null,
+  ".npmignore": null,
+  "LICENSE": null,
+  "types.d.ts": null,
+  "dev.ts": null,
+  "README.md": null,
+  "src": {
+    "cmd": {
+      "command.ts": null
+    },
+    "core": {
+      "tree.ts": null,
+      "scanner.ts": null,
+      "printer.ts": null
+    },
+    "handlers": {
+      "handler.ts": null
+    }
+  },
+  "package.json": null,
+  ".github": {
+    "workflows": {
+      "deploy.yml": null
+    }
+  },
+  "utils": {
+    "ignore.ts": null,
+    "helper.ts": null,
+    "parser.ts": null
+  }
+}

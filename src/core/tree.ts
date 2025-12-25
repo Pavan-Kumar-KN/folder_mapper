@@ -1,4 +1,3 @@
-import { parsePathString } from "../../utils/helper";
 import path from 'path';
 
 function buildTree(paths: string[]): TreeNode {
