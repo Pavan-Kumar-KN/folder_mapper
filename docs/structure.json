@@ -1,0 +1,64 @@
+{
+  "bun.lock": null,
+  "LICENSE": null,
+  "utils": {
+    "ignore.ts": null,
+    "helper.ts": null,
+    "parser.ts": null
+  },
+  ".npmignore": null,
+  "dev.ts": null,
+  "scripts": {
+    "build.js": null
+  },
+  ".github": {
+    "workflows": {
+      "deploy.yml": null,
+      "publish.yml": null
+    }
+  },
+  "example": {
+    "example.ts": null
+  },
+  "index.ts": null,
+  "types.d.ts": null,
+  ".gitignore": null,
+  "README.md": null,
+  "docs": {
+    "structure.json": null,
+    "structure.md": null,
+    "devdoc.md": null,
+    "features": {
+      "roadmap.md": null,
+      "features.md": null
+    }
+  },
+  "bunfig.toml": null,
+  "tsconfig.build.json": null,
+  "package.json": null,
+  "tests": {
+    "helpers": {
+      "renamefiles.ts": null,
+      "fixture.ts": null
+    },
+    "tree.test.ts": null,
+    "ignore.test.ts": null,
+    "scanner.test.ts": null,
+    "printer.test.ts": null,
+    "helper.test.ts": null
+  },
+  "tsconfig.json": null,
+  "src": {
+    "handlers": {
+      "handler.ts": null
+    },
+    "cmd": {
+      "command.ts": null
+    },
+    "core": {
+      "printer.ts": null,
+      "tree.ts": null,
+      "scanner.ts": null
+    }
+  }
+}

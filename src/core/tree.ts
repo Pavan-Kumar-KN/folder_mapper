@@ -1,4 +1,3 @@
-import { parsePathString } from "../../utils/helper";
 import path from 'path';
 
 function buildTree(paths: string[]): TreeNode {
@@ -12,7 +11,15 @@ function buildTree(paths: string[]): TreeNode {
     // }
     
     // currently only supported for windows paths
-    const parts = strpath.split("\\"); // returns ['string 1' , 'string 2' , 'string 3']
+    
+    // const parts = strpath.split("\\"); // returns ['string 1' , 'string 2' , 'string 3']
+  
+    const normalizedPath = strpath.replace(/[\\/]+/g, path.posix.sep);
+    
+    const parts = normalizedPath
+      .split(path.posix.sep)
+      .filter(Boolean); // drops empty strings from leading slashes
+    
     let currentLevel = tree; // {}
     
     parts.forEach((part , index) =>{ // ['string 1' , 'string 2' , 'string 3'] traversing this array 
