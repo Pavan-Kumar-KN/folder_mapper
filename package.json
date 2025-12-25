@@ -1,6 +1,6 @@
 {
   "name": "@pavan-kumar-kn/folder_mapper",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Generate beautiful directory tree structures for documentation",
   "main": "./dist/index.js",
   "bin": {

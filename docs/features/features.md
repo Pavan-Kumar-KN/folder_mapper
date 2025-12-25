@@ -42,9 +42,6 @@ This would be **super useful** as a CLI tool that you (and others) can use acros
 
 ### **Phase 2: Advanced Features**
 ```/dev/null/features.txt#L1-12
-
-4. Max depth control
-   - `folder-mapper --depth 3`
  
 5. Multiple output formats
    - Markdown (current)
