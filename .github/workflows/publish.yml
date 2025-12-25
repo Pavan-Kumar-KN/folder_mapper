@@ -17,7 +17,7 @@ jobs:
       
       - uses: actions/setup-node@v4
         with: 
-          node-version: "24"
+          node-version: "20"
           registry-url: "https://registry.npmjs.org"
           
       - name: Install Bun
@@ -25,4 +25,6 @@ jobs:
         
       - run: bun install
       - run: bun run test
-      - run: npm publish 
+      - run: npm publish --access public
+        env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
