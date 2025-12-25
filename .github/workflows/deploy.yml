@@ -39,9 +39,9 @@ jobs:
           git show origin/${{ github.base_ref }}:docs/structure.json > /tmp/old-structure.json 2>/dev/null || echo "{}" > /tmp/old-structure.json
             
           if [ -s /tmp/old-structure.json ]; then
-            echo "✅ Baseline found"
+            echo "Baseline found"
           else
-            echo "⚠️  No baseline - this is the first structure generation"
+            echo "No baseline - this is the first structure generation"
           fi
           
       - name: Generate structure for PR
@@ -54,17 +54,18 @@ jobs:
         run: |
           if git diff --quiet docs/structure.json docs/structure.md; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "✅ No structural changes detected"
+            echo "No structural changes detected"
           else
             echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "⚠️  Structural changes detected"
+            echo " Structural changes detected"
           fi
       
       - name: Commit structure updates
-        if: steps.diff_check.outputs.has_changes == 'true'
+        if: steps.diff_check.outputs.has_changes == 'true' && github.event.pull_request.head.repo.full_name == github.repository
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
           git add docs/structure.json docs/structure.md
           git commit -m "chore: auto-update structure docs [skip ci]"
           git push origin HEAD:${{ github.head_ref }}
