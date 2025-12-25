@@ -4,9 +4,13 @@ on:
   pull_request:
     branches: [phase-2/develop]
 
-jobs:
+jobs:    
   verify-structure:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      
     steps:
       - name: Checkout PR branch
         uses: actions/checkout@v4
@@ -55,9 +59,20 @@ jobs:
             echo "has_changes=true" >> $GITHUB_OUTPUT
             echo "⚠️  Structural changes detected"
           fi
+      
+      - name: Commit structure updates
+        if: steps.diff_check.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/structure.json docs/structure.md
+          git commit -m "chore: auto-update structure docs [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Success message
         if: steps.diff_check.outputs.has_changes == 'false'
         run: |
-          echo "✨ Structure is up to date!"
+          echo "Docs Structure is updated"
           echo "CI check passed."
