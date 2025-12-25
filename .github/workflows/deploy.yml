@@ -109,6 +109,12 @@ jobs:
       - name: Build the project
         run: bun run build
 
+      - name: Link project
+        run: bun link
+
+      - name: Link folder_mapper
+        run: bun link @pavan-kumar-kn/folder_mapper
+
       - name: Generate structure
         run: |
           echo "Generating structure for branch..."
